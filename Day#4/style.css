@@ -1,0 +1,78 @@
+:root{
+    --background: rgb(242, 58, 248);
+}
+.container__body {
+	width: 90vw;
+	height: 90vh;
+	display: flex;
+    font-family: 'Courier New', Courier, monospace;
+	justify-content: center;
+	align-items: center;
+    overflow: hidden;
+}
+.frame__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: var(--background);
+    border-radius: 5px;
+}
+.center__container {
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 200px;
+    height: 200px;
+}
+.circle__center{
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 15px 1px #000;
+}
+.circle__center--out{ 
+    width: 99px;
+    height: 99px;
+    z-index: 1;
+    animation: circle_sizing_out 4s cubic-bezier(.22,.88,.51,1) infinite alternate;
+}
+.circle__center--middle{ 
+    width: 66px;
+    height: 66px;
+    z-index: 2;
+    animation: circle_sizing_middle 4s cubic-bezier(.22,.88,.51,1) infinite alternate;
+}
+.circle__center--withing{ 
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    z-index: 3;
+    animation: circle_sizing_withing 4s cubic-bezier(.22,.88,.51,1) infinite alternate;
+}
+@keyframes circle_sizing_out{
+    0%,30%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes circle_sizing_middle{
+    0%,50%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes circle_sizing_withing{
+    0%,70%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
