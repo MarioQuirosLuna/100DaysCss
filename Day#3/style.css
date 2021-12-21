@@ -1,0 +1,197 @@
+:root{
+    --background: #333;
+    --sun1: #F6B600;
+    --sun2: #F5E000;
+    --sky: #59E4F7;
+    --skyNight: #0b2124;
+    --ground: #fdbb63;
+    --groundShadow: #967244;
+    --shadow1: #eee;
+    --shadow2: #ddd;
+    --shadow3: #aaa;
+
+    --timeAnimation: cubic-bezier(0.5,0,0.5,1);
+}
+.container__body {
+	width: 90vw;
+	height: 90vh;
+	display: flex;
+    font-family: 'Courier New', Courier, monospace;
+	justify-content: center;
+	align-items: center;
+    overflow: hidden;
+}
+
+.frame__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background: var(--background);
+    border-radius: 5px;
+}
+.center__container {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    animation: shadow_center 4s var(--timeAnimation) infinite;
+}
+.circle__center {
+    position: relative;
+    clip-path: circle(90px at 90px 90px);
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.sky__center{
+    position: absolute;
+    clip-path: circle(90px at 90px 90px);
+    top: 0;
+    width: 200px;
+    height: 200px;
+    z-index: 0;
+    border-radius: 50%;
+    animation: sky_time 4s var(--timeAnimation) infinite;
+}
+.sun__center{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    left: 75px;
+    border-radius: 50%;
+    z-index: 2;
+    transform-origin: 50% 370%;
+    animation: move_sun 4s var(--timeAnimation) infinite;
+}
+.mountain__center--right{
+    position: absolute;
+    top: 50px;
+    left: 35px;
+    width: 120px;
+    height: 60px; 
+    z-index: 2;
+    clip-path: polygon(0% 100%, 72% 100%, 50% 0%);
+    animation: mountain_shadow_right 4s var(--timeAnimation) infinite;
+}
+.mountain__center--left{
+    position: absolute;
+    top: 50px;
+    left: 35px;
+    width: 120px;
+    height: 60px; 
+    z-index: 2;
+    clip-path: polygon(70% 100%, 100% 100%, 50% 0%);
+    animation: mountain_shadow_left 4s var(--timeAnimation) infinite;
+}
+.ground__center{
+    position: absolute;
+    top: 110px;
+    width: 200px;
+    height: 70px;
+    background: var(--ground);
+    z-index: 3;
+}
+.shadow__center{
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 60px;
+    top: 110px;
+    left: -10px;
+    z-index: 4;
+    background: var(--groundShadow);
+    animation: shadow_floor 4s var(--timeAnimation) infinite;
+}
+.overSun__center{
+    position: absolute;
+    width: 175px;
+    height: 175px;
+    top: -55px;
+    left: -54px;
+    z-index: 5;
+    border: 58px solid var(--background);
+    border-radius: 50%;
+}
+@keyframes sky_time{
+    0%{
+        background: var(--skyNight);
+    }
+    33%{
+        background: var(--sky);
+    }
+    66%{
+        background: var(--sky);
+    }
+    100%{
+        background: var(--skyNight);
+    }
+}
+@keyframes move_sun{
+    0%{
+        background: var(--sun1);
+        transform: rotate(-70deg);
+    }
+    33%{
+        background: var(--sun2);
+        transform: rotate(-30deg);
+    }
+    100%{
+        background: var(--sun1);
+        transform: rotate(70deg);
+    }
+}
+@keyframes mountain_shadow_right{
+    0%{
+        background: var(--shadow1);
+    }
+    40%{
+        background: var(--shadow2);
+    }
+    100%{
+        background: var(--shadow3);
+    }
+}
+@keyframes mountain_shadow_left{
+    0%{
+        background: var(--shadow3);
+    }
+    70%{
+        background: var(--shadow2);
+    }
+    100%{
+        background: var(--shadow1)
+    }
+}
+@keyframes shadow_floor{
+    0%{
+        clip-path: polygon(100% 0, 24% 0, 82% 0);
+    }
+    45%{
+        clip-path: polygon(80% 40%, 24% 0, 82% 0);
+    }
+    75%{
+        clip-path: polygon(0 40%, 24% 0, 82% 0);
+    }
+    100%{
+        clip-path: polygon(0 0, 24% 0, 82% 0);
+    }
+}
+@keyframes shadow_center{
+    0%{
+        opacity: 0
+    }
+    33%{
+        opacity: 0.8;
+    }
+    50%{
+        opacity: 1;
+    }
+    66%{
+        opacity: 0.8;
+    }
+    100%{
+        opacity: 0;
+    }
+}
