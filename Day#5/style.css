@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  background: #42A7A1;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+  position: absolute;
+  top: 90px;
+  left: 60px;
+  height: 220px;
+  width: 280px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 10px 10px 15px 0 rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.card .header__card {
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: 0;
+  background-color: #F1BA64;
+}
+.card .header__card .big {
+  position: absolute;
+  font-size: 14px;
+  font-weight: bold;
+}
+.card .header__card .small {
+  position: absolute;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+.card .header__card .header__card--title {
+  top: 10px;
+  left: 15px;
+}
+.card .header__card .header__card--date {
+  top: 30px;
+  left: 15px;
+}
+.card .header__card .header__card--subtitle {
+  top: 15px;
+  right: 15px;
+}
+.card .header__card .header__card--value {
+  top: 30px;
+  right: 15px;
+}
+.card .main__card--parameter {
+  position: absolute;
+  padding: 10px 0 14px 0;
+  top: 60px;
+  right: 0;
+}
+.card .main__card--parameter span {
+  position: relative;
+  font-size: 10px;
+  color: #777;
+  padding: 0 10px 0 20px;
+}
+.card .main__card--parameter span:before {
+  position: absolute;
+  left: 0;
+  top: 6px;
+  content: "";
+  width: 12px;
+  height: 3px;
+  border-radius: 3px;
+}
+.card .main__card--parameter .red:before {
+  background: red;
+}
+.card .main__card--parameter .blue:before {
+  background: blue;
+}
+.card .main__card {
+  width: 100%;
+  height: 130px;
+  position: relative;
+}
+.card .main__card .main__card--line {
+  width: 256px;
+  height: 42px;
+  position: absolute;
+  margin: 0 12px;
+  border-bottom: 1px solid #ccc;
+}
+.card .main__card .line-1 {
+  top: 60px;
+}
+.card .main__card .line-2 {
+  top: 103px;
+}
+.card .main__card .line-3 {
+  top: 146px;
+}
+.card .main__card--graphic {
+  position: absolute;
+  top: 60px;
+  width: 256px;
+  height: 130px;
+  margin: 0 12px;
+}
+.card .main__card--graphic .points {
+  position: relative;
+}
+.card .main__card--graphic .points svg {
+  position: absolute;
+}
+.card .main__card--graphic .points svg polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+.card .main__card--graphic .points .point {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+}
+.card .main__card--graphic .points .point .tooltip {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translate(-50%, 20px) scale(0);
+  font-size: 11px;
+  padding: 4px 4px;
+  visibility: hidden;
+  opacity: 0;
+  border-radius: 3px;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+}
+.card .main__card--graphic .points .point .tooltip:after {
+  position: absolute;
+  display: block;
+  content: "";
+  height: 6px;
+  width: 6px;
+  left: 50%;
+  bottom: -3px;
+  margin: 0 0 0 -3px;
+  transform: rotate(45deg);
+}
+.card .main__card--graphic .points .point:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0) scale(1);
+}
+.card .main__card--graphic .points .point-red {
+  background-color: #f00;
+}
+.card .main__card--graphic .points .point-red .tooltip {
+  background-color: #f00;
+}
+.card .main__card--graphic .points .point-red .tooltip:after {
+  background-color: #f00;
+}
+.card .main__card--graphic .points .point-blue {
+  background-color: #00f;
+}
+.card .main__card--graphic .points .point-blue .tooltip {
+  background-color: #00f;
+}
+.card .main__card--graphic .points .point-blue .tooltip:after {
+  background-color: #00f;
+}
+.card .main__card--graphic .points .graphic--red polyline {
+  stroke: #f00;
+}
+.card .main__card--graphic .points .graphic--red .point-1 {
+  top: 88px;
+  left: 5px;
+}
+.card .main__card--graphic .points .graphic--red .point-2 {
+  top: 50px;
+  left: 45px;
+}
+.card .main__card--graphic .points .graphic--red .point-3 {
+  top: 63px;
+  left: 85px;
+}
+.card .main__card--graphic .points .graphic--red .point-4 {
+  top: 46px;
+  left: 125px;
+}
+.card .main__card--graphic .points .graphic--red .point-5 {
+  top: 81px;
+  left: 165px;
+}
+.card .main__card--graphic .points .graphic--red .point-6 {
+  top: 90px;
+  left: 205px;
+}
+.card .main__card--graphic .points .graphic--red .point-7 {
+  top: 58px;
+  left: 245px;
+}
+.card .main__card--graphic .points .graphic--blue polyline {
+  stroke: #00f;
+}
+.card .main__card--graphic .points .graphic--blue .point-1 {
+  top: 103px;
+  left: 5px;
+}
+.card .main__card--graphic .points .graphic--blue .point-2 {
+  top: 94px;
+  left: 45px;
+}
+.card .main__card--graphic .points .graphic--blue .point-3 {
+  top: 108px;
+  left: 85px;
+}
+.card .main__card--graphic .points .graphic--blue .point-4 {
+  top: 97px;
+  left: 125px;
+}
+.card .main__card--graphic .points .graphic--blue .point-5 {
+  top: 101px;
+  left: 165px;
+}
+.card .main__card--graphic .points .graphic--blue .point-6 {
+  top: 118px;
+  left: 205px;
+}
+.card .main__card--graphic .points .graphic--blue .point-7 {
+  top: 105px;
+  left: 245px;
+}
+.card .footer__card {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  color: #777;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */
